@@ -1,12 +1,11 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-
-    const browser = await puppeteer.launch({headless: false, ignoreHTTPSErrors: true, defaultViewport: null,  slowMo: 10, args: [
-      '--disable-web-security',
-      '--disable-features=IsolateOrigins,site-per-process'
-    ]});
-
+    const browser = await puppeteer.launch({
+        headless: false, ignoreHTTPSErrors: true, defaultViewport: null,  slowMo: 10,
+        args: [ '--disable-web-security', '--disable-features=IsolateOrigins,site-per-process' ]
+    });
+    
     const page = await browser.newPage();
     await page.goto('https://testcafe-demo-page.glitch.me/');
 
