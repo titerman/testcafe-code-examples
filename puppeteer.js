@@ -39,9 +39,9 @@ const puppeteer = require('puppeteer');
     const frameHandle = await page.waitForSelector('.restaurant-location > iframe',  {timeout: 2000});
     const frame = await frameHandle.contentFrame();
     const zoomButton = await frame.waitForSelector('button[title="Zoom in"', {timeout: 2000});
-
-    // submit the order
     await frame.click('button[title="Zoom in"');
+    
+    // submit the order
     await page.click('.complete-order');
     await browser.close();
 })();
