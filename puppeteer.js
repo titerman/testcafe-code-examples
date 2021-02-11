@@ -12,7 +12,7 @@ const puppeteer = require('puppeteer');
     const page = await browser.newPage();
     await page.goto('https://testcafe-demo-page.glitch.me/');
 
-    // automatically dismiss alert() messages
+    // automatically dismiss dialog boxes
     page.on('dialog', async dialog => {
         await dialog.dismiss();
     });

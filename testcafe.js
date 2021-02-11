@@ -5,7 +5,7 @@ fixture `Pizza Palace`
 
 test('Submit a form', async t => {
     await t
-        // automatically dismiss alert() messages
+        // automatically dismiss dialog boxes
         .setNativeDialogHandler(() => true)
 
         // drag the pizza size slider

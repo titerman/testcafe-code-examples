@@ -36,7 +36,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
         await driver.switchTo().defaultContent();
         await driver.findElement(By.className("complete-order")).click();
 
-        // dismiss the confirmation alert
+        // dismiss the confirmation dialog
         await driver.wait(until.alertIsPresent());
         const confirmationMessage = driver.switchTo().alert();
         await confirmationMessage.accept();
