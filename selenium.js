@@ -2,11 +2,9 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 
 (async function pizzaPalace() {
 
-    // launch the browser
     const driver = await new Builder().forBrowser('firefox').build();
     
     try {
-        // open the specified URL
         await driver.get('https://testcafe-demo-page.glitch.me/');
 
         // drag the pizza size slider
