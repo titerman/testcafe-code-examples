@@ -21,7 +21,7 @@ const chaiWebdriver = require('chai-webdriver');
         await driver.wait(until.elementLocated(By.css('.google-map')),10000); // wait for the first map to load before requesting data
         await driver.findElement(By.className("confirm-address")).click();   
         await driver.findElement(By.id('phone-input')).sendKeys('+1-541-754-300');
-        await driver.findElement(By.css('#step4 .next-step')).click();
+        await driver.findElement(By.css('#step3 .next-step')).click();
 
         await driver.wait(until.alertIsPresent());  // wait for the alert
         const errorMessage = driver.switchTo().alert(); // switch to the alert
@@ -30,7 +30,7 @@ const chaiWebdriver = require('chai-webdriver');
         chai.expect(errorContent).to.equal("Please enter a valid phone number.");
 
         await driver.findElement(By.id('phone-input')).sendKeys('1');
-        await driver.findElement(By.css('#step4 .next-step')).click();
+        await driver.findElement(By.css('#step3 .next-step')).click();
 
         await driver.wait(until.elementLocated(By.css('.restaurant-location iframe')),10000); // wait for the iframe to appear
         const restaurantLocationFrame = await driver.findElement(By.css('.restaurant-location iframe')); // select the iframe
